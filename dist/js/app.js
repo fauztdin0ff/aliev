@@ -131,6 +131,25 @@ document.addEventListener("DOMContentLoaded", function () {
    }
 });
 
+/*------------------------------Кастомный курсор---------------------------*/
+const previewElements = document.querySelectorAll('.reviews__preview');
+const customCursor = document.querySelector('.custom-cursor');
+
+previewElements.forEach(preview => {
+   preview.addEventListener('mouseenter', () => {
+      customCursor.style.display = 'flex';
+   });
+
+   preview.addEventListener('mouseleave', () => {
+      customCursor.style.display = 'none';
+   });
+
+   preview.addEventListener('mousemove', (e) => {
+      customCursor.style.left = e.clientX + 'px';
+      customCursor.style.top = e.clientY + 'px';
+   });
+});
+
 
 // ----------------------------- Инициализация Swiper -----------------------------
 const mainSlider = new Swiper('.main-slider', {
@@ -231,16 +250,23 @@ function animateSlideIn(slide, index) {
          break;
 
       case 2: // Reviews
-         tl.fromTo(slide.querySelectorAll('.reviews__title, .review'), {
-            opacity: 0,
-            scale: 0.8
+         tl.fromTo(slide.querySelectorAll('.reviews__preview-image'), {
+            clipPath: 'inset(100% 0% 0% 0%)'
          }, {
-            opacity: 1,
-            scale: 1,
+            clipPath: 'inset(0% 0% 0% 0%)',
             duration: 1,
-            stagger: 0.2,
-            ease: 'back.out(1.7)'
+            ease: 'power3.out',
          });
+
+         tl.fromTo(slide.querySelectorAll('.reviews__preview-name'), {
+            opacity: 1,
+            clipPath: 'inset(0% 100% 0% 0%)'
+         }, {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.1
+         }, '-=0.5');
          break;
    }
 }
