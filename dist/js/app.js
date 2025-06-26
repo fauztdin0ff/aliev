@@ -341,7 +341,10 @@ window.addEventListener('load', () => {
       height: 68,
       opacity: 1,
       duration: 1,
-      ease: 'power2.out'
+      ease: 'power2.out',
+      onComplete() {
+         document.querySelector('.header__top')?.classList.remove('header__top-loading');
+      }
    });
 
    gsap.fromTo('.header__menu', {

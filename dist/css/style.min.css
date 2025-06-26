@@ -130,13 +130,11 @@ html {
 
 body {
   height: 100%;
-  height: 100%;
   color: rgb(0, 0, 0);
   font-family: Gilroy;
   font-size: 14px;
   font-weight: 400;
   line-height: 135.714286%;
-  overflow: hidden;
   background: #000;
 }
 body.no-scroll {
@@ -175,10 +173,15 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   z-index: 999;
+}
+.header__top.header__top-loading {
+  height: 100vh;
+}
+.header__top.header__top-loading .header__button {
+  opacity: 0;
 }
 .header__top-body, .header__bottom-body {
   display: flex;
@@ -358,9 +361,12 @@ main {
 /*------------------------------Hero---------------------------*/
 .swiper-fade .swiper-slide {
   transition-timing-function: cubic-bezier(0.8, 0, 0, 0.8) !important;
+  height: 100vh;
   max-height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
-  min-height: 800px;
 }
 
 .hero {
@@ -378,11 +384,14 @@ main {
 }
 .hero__body {
   position: relative;
-  height: 100vh;
   overflow: hidden;
+  height: 100%;
   padding: 100px 0;
   display: flex;
   align-items: flex-end;
+  flex: 1;
+  min-height: 600px;
+  max-height: 100vh;
 }
 .hero__body::after {
   content: "";
@@ -480,9 +489,7 @@ main {
 /*------------------------------About---------------------------*/
 .about {
   background: linear-gradient(180deg, rgba(234, 234, 234, 0.9), rgba(212, 212, 212, 0.9) 100%);
-  overflow: hidden;
   position: relative;
-  overflow: clip;
 }
 .about__overlay {
   position: absolute;
@@ -492,9 +499,6 @@ main {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
-  min-height: 800px;
-  height: 100vh;
-  overflow: hidden;
 }
 @media (max-width: 767px) {
   .about {
@@ -502,17 +506,20 @@ main {
   }
 }
 .about__body {
-  height: 100vh;
   padding-top: 123px;
-  overflow: hidden;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 100px;
+  height: 100%;
+  flex: 1;
+  overflow: clip;
 }
 @media (max-width: 980px) {
   .about__body {
     gap: 30px;
+    height: auto;
+    overflow: unset;
   }
 }
 @media (max-width: 767px) {
@@ -525,7 +532,6 @@ main {
   }
 }
 .about__text {
-  margin: 97px 0;
   width: 100%;
   max-width: 541px;
   margin-left: auto;
@@ -596,7 +602,7 @@ main {
   }
 }
 .about__image {
-  flex: 0 0 45%;
+  flex: 0 1 45%;
   margin-left: auto;
   margin-top: auto;
 }
@@ -604,16 +610,19 @@ main {
   display: inline-block;
   margin-top: auto;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
 }
 @media (max-width: 980px) {
   .about__image {
-    flex: 0 0 50%;
+    flex: 0 0 46%;
   }
 }
 @media (max-width: 767px) {
   .about__image {
     margin: 0;
+    max-height: 370px;
     height: 370px;
     background: linear-gradient(180deg, rgba(219, 219, 219, 0.77), rgba(102, 102, 102, 0.77) 100%);
     flex: 1;
