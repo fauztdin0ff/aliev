@@ -107,14 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
    const body = document.querySelector("body");
 
    if (menuIcon && menuBody) {
-      // Открытие/закрытие меню по иконке
       menuIcon.addEventListener("click", function () {
          menuIcon.classList.toggle("active");
          menuBody.classList.toggle("active");
          body.classList.toggle("no-scroll");
       });
 
-      // Закрытие меню при клике на ссылку внутри меню
       menuBody.addEventListener("click", function (event) {
          if (event.target.tagName === "A" || event.target.closest("a")) {
             menuIcon.classList.remove("active");
@@ -123,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
          }
       });
 
-      // Закрытие меню при клике вне области меню
       document.addEventListener("click", function (event) {
          if (!menuBody.contains(event.target) && !menuIcon.contains(event.target)) {
             menuIcon.classList.remove("active");
@@ -134,6 +131,239 @@ document.addEventListener("DOMContentLoaded", function () {
    }
 });
 
+
+// ----------------------------- Инициализация Swiper -----------------------------
+const mainSlider = new Swiper('.main-slider', {
+   slidesPerView: 1,
+   allowTouchMove: false,
+   simulateTouch: false,
+   keyboard: false,
+   mousewheel: false,
+   loop: false,
+   effect: 'fade',
+   fadeEffect: { crossFade: true },
+   speed: 400,
+   on: {
+      slideChangeTransitionStart() {
+         const prevSlide = mainSlider.slides[mainSlider.previousIndex];
+         const currentSlide = mainSlider.slides[mainSlider.activeIndex];
+
+         animateSlideOut(prevSlide, mainSlider.previousIndex);
+         animateSlideIn(currentSlide, mainSlider.activeIndex);
+      }
+   }
+});
+
+// ----------------------------- Переключение слайдов по меню -----------------------------
+document.querySelectorAll('[data-slide]').forEach(link => {
+   link.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      document.querySelectorAll('[data-slide]').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const nextIndex = +link.dataset.slide;
+      const prevIndex = mainSlider.activeIndex;
+      const prevSlide = mainSlider.slides[prevIndex];
+
+      await animateSlideOut(prevSlide, prevIndex);
+      mainSlider.slideTo(nextIndex);
+   });
+});
+
+// ----------------------------- Анимации входа -----------------------------
+function animateSlideIn(slide, index) {
+   if (!slide) return;
+   gsap.killTweensOf("*");
+
+   let tl = gsap.timeline();
+
+   switch (index) {
+      case 0: // Hero
+         animateWordsFromBottom(slide.querySelector('.hero__title'));
+
+         tl.to('.hero__overlay', {
+            y: '-100%',
+            duration: 1,
+            ease: 'power2.out'
+         });
+
+         tl.fromTo('.hero__subtitle', {
+            opacity: 1,
+            clipPath: 'inset(0% 100% 0% 0%)'
+         }, {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.1
+         }, "+=0.8");
+         break;
+
+      case 1: // About
+         animateWordsFromBottom(slide.querySelector('.about__text h2'));
+
+         const overlay = slide.querySelector('.about__overlay');
+         if (overlay) gsap.set(overlay, { x: 0 });
+
+         tl.to(overlay, {
+            x: '100%',
+            duration: 1,
+            ease: 'power2.out'
+         });
+
+
+         tl.from('.about__image', {
+            x: -150,
+            duration: 1,
+            ease: 'power2.out'
+         }, "<");
+
+         tl.fromTo(slide.querySelectorAll('.about__text p, .about__text h3, .about__text h4'), {
+            opacity: 1,
+            clipPath: 'inset(0% 100% 0% 0%)'
+         }, {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.1
+         }, '+=0.8');
+
+         break;
+
+      case 2: // Reviews
+         tl.fromTo(slide.querySelectorAll('.reviews__title, .review'), {
+            opacity: 0,
+            scale: 0.8
+         }, {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'back.out(1.7)'
+         });
+         break;
+   }
+}
+
+// ----------------------------- Анимации выхода -----------------------------
+function animateSlideOut(slide, index) {
+   if (!slide) return Promise.resolve();
+
+   return new Promise(resolve => {
+      let tl = gsap.timeline({ onComplete: resolve });
+
+      switch (index) {
+         case 0: // Hero
+            tl.to(slide.querySelectorAll('.hero__title span'), {
+               opacity: 0,
+               duration: 0.3,
+               ease: 'power1.in'
+            });
+
+            tl.to(slide.querySelectorAll('.hero__subtitle'), {
+               opacity: 0,
+               duration: 0.3,
+               ease: 'power1.in'
+            }, "<");
+
+            tl.to('.hero__overlay', {
+               y: '0%',
+               duration: 0.5,
+               ease: 'power2.out'
+            }, "<");
+            break;
+
+         case 1: // About
+            tl.to(slide.querySelectorAll('.about__text p, .about__text h3, .about__text h4'), {
+               opacity: 0,
+               y: 20,
+               duration: 0.5,
+               ease: 'power1.in'
+            });
+
+            tl.to('.about__overlay', {
+               x: '0%',
+               duration: 0.8,
+               ease: 'power2.out'
+            }, "<");
+            break;
+
+         default:
+            resolve(); // нет анимации — сразу завершение
+      }
+   });
+}
+
+// ----------------------------- Анимация текста по словам -----------------------------
+function wrapWords(element) {
+   if (!element || element.dataset.wrapped) return;
+
+   const words = element.textContent.trim().split(/\s+/);
+   element.innerHTML = '';
+
+   words.forEach(word => {
+      const span = document.createElement('span');
+      span.textContent = word;
+      span.style.display = 'inline-block';
+      span.style.marginRight = '0.3em';
+      element.appendChild(span);
+   });
+
+   element.dataset.wrapped = 'true';
+}
+
+function animateWordsFromBottom(element) {
+   if (!element) return;
+
+   wrapWords(element);
+
+   gsap.fromTo(element.children, {
+      y: 30,
+      opacity: 0
+   }, {
+      y: 0,
+      opacity: 1,
+      delay: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power2.out'
+   });
+}
+
+// ----------------------------- Стартовая инициализация -----------------------------
+window.addEventListener('load', () => {
+   const heroTitle = document.querySelector('.hero__title');
+   wrapWords(heroTitle);
+
+   animateSlideIn(mainSlider.slides[mainSlider.activeIndex], mainSlider.activeIndex);
+
+   gsap.to('.header__top', {
+      height: 68,
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.out'
+   });
+
+   gsap.fromTo('.header__menu', {
+      y: 20,
+      opacity: 0
+   }, {
+      y: 0,
+      opacity: 1,
+      delay: 0.8,
+      duration: 1,
+      ease: 'power2.out'
+   });
+
+   gsap.fromTo('.header__menu li a svg', {
+      opacity: 0
+   }, {
+      opacity: 1,
+      delay: 1,
+      duration: 1,
+      ease: 'power2.in'
+   });
+});
 })();
 
 /******/ })()
