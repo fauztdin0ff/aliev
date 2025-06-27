@@ -336,6 +336,9 @@ body.no-scroll {
 .header__menu ul li a.active svg {
   transform: scaleY(1);
 }
+.header__menu ul li:first-child a.active, .header__menu ul li:nth-child(2) a.active, .header__menu ul li:nth-child(3) a.active {
+  pointer-events: none;
+}
 @media (hover: hover) {
   .header__menu ul:hover a:not(:hover) {
     color: #767676;
@@ -528,7 +531,8 @@ body.no-scroll {
 .about {
   background: linear-gradient(180deg, rgba(234, 234, 234, 0.9), rgba(212, 212, 212, 0.9) 100%);
   position: relative;
-  overflow: clip !important;
+  overflow-x: clip !important;
+  overflow-y: auto !important;
 }
 .about__overlay {
   position: absolute;
@@ -550,8 +554,7 @@ body.no-scroll {
   display: grid;
   grid-template-columns: 1fr 45%;
   align-items: center;
-  max-height: 100vh;
-  overflow-y: auto;
+  height: 100%;
 }
 @media (max-width: 980px) {
   .about__body {
@@ -611,7 +614,7 @@ body.no-scroll {
   .about__text {
     color: #fff;
     margin: 0;
-    padding: 32px 40px 70px 40px;
+    padding: 32px 40px 160px 40px;
   }
   .about__text h2 {
     font-size: 30px;
