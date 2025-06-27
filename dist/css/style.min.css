@@ -672,7 +672,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   position: static;
-  overflow: hidden;
+  overflow: clip !important;
 }
 .reviews::after {
   content: "";
