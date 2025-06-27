@@ -150,6 +150,156 @@ previewElements.forEach(preview => {
    });
 });
 
+/*------------------------------Swiper in case---------------------------*/
+let swiperInstance = null;
+
+function initMobileSwiper() {
+   const isMobile = window.innerWidth < 600;
+
+   if (isMobile && !swiperInstance) {
+      swiperInstance = new Swiper('.review__gallery-slider', {
+         slidesPerView: 1,
+         spaceBetween: 16,
+         loop: true,
+         speed: 600,
+         autoplay: {
+            delay: 2000,
+            disableOnInteraction: true,
+         },
+      });
+   }
+
+   if (!isMobile && swiperInstance) {
+      swiperInstance = null;
+   }
+}
+
+window.addEventListener('load', initMobileSwiper);
+window.addEventListener('resize', initMobileSwiper);
+
+
+/*------------------------------Tabs in cases---------------------------*/
+document.addEventListener('DOMContentLoaded', () => {
+   const previews = document.querySelectorAll('.reviews__preview');
+   const submenuLinks = document.querySelectorAll('.submenu a');
+   const reviews = document.querySelectorAll('.review');
+
+   function showReviewById(id) {
+      reviews.forEach(review => review.classList.remove('show'));
+
+      const activeReview = document.querySelector(`.review[data-review="${id}"]`);
+      if (activeReview) {
+         activeReview.classList.add('show');
+         animateReviewIn(activeReview);
+
+         activeReview.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+         });
+      }
+
+      submenuLinks.forEach(link => link.classList.remove('active'));
+      const activeLink = document.querySelector(`.submenu a[data-review="${id}"]`);
+      if (activeLink) {
+         activeLink.classList.add('active');
+      }
+
+      previews.forEach(p => p.classList.remove('active'));
+      const activePreview = document.querySelector(`.reviews__preview[data-preview="${id}"]`);
+      if (activePreview) {
+         activePreview.classList.add('active');
+      }
+   }
+
+   previews.forEach(preview => {
+      preview.addEventListener('click', () => {
+         const target = preview.dataset.preview;
+         showReviewById(target);
+      });
+   });
+
+   submenuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+         e.preventDefault();
+         const target = link.dataset.review;
+         showReviewById(target);
+      });
+   });
+
+   const backButtons = document.querySelectorAll('.review__back');
+   backButtons.forEach(button => {
+      button.addEventListener('click', () => {
+         const review = button.closest('.review');
+         if (review && review.classList.contains('show')) {
+            review.classList.remove('show');
+         }
+      });
+   });
+});
+
+
+// ----------------------------- Переключение слайдов по меню -----------------------------
+const submenu = document.querySelector('.submenu');
+
+document.querySelectorAll('[data-slide]').forEach(link => {
+   link.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const nextIndex = +link.dataset.slide;
+      const prevIndex = mainSlider.activeIndex;
+
+      if (nextIndex === 2) {
+         submenu.classList.add('opened');
+      } else {
+         submenu.classList.remove('opened');
+      }
+
+      if (prevIndex === 2 && nextIndex === 2) {
+         const activeReview = document.querySelector('.review.show');
+         if (activeReview) {
+            activeReview.classList.remove('show');
+
+            activeReview.scrollTo({
+               top: 0,
+               left: 0,
+               behavior: 'smooth'
+            });
+         }
+         return;
+      }
+
+      document.querySelectorAll('[data-slide]').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const prevSlide = mainSlider.slides[prevIndex];
+
+      await animateSlideOut(prevSlide, prevIndex);
+      mainSlider.slideTo(nextIndex);
+   });
+});
+
+
+
+/*------------------------------Animations in case---------------------------*/
+function animateReviewIn(review) {
+   if (!review) return;
+
+   animateWordsFromBottom(document.querySelector('.review__title'));
+
+   gsap.fromTo(review.querySelectorAll('.review__image img'), {
+      clipPath: 'inset(100% 0% 0% 0%)'
+   }, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      delay: 1,
+      duration: 1,
+      ease: 'power3.out',
+   });
+
+}
+
+
+
 
 // ----------------------------- Инициализация Swiper -----------------------------
 const mainSlider = new Swiper('.main-slider', {
@@ -171,23 +321,6 @@ const mainSlider = new Swiper('.main-slider', {
          animateSlideIn(currentSlide, mainSlider.activeIndex);
       }
    }
-});
-
-// ----------------------------- Переключение слайдов по меню -----------------------------
-document.querySelectorAll('[data-slide]').forEach(link => {
-   link.addEventListener('click', async (e) => {
-      e.preventDefault();
-
-      document.querySelectorAll('[data-slide]').forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-
-      const nextIndex = +link.dataset.slide;
-      const prevIndex = mainSlider.activeIndex;
-      const prevSlide = mainSlider.slides[prevIndex];
-
-      await animateSlideOut(prevSlide, prevIndex);
-      mainSlider.slideTo(nextIndex);
-   });
 });
 
 // ----------------------------- Анимации входа -----------------------------
@@ -393,6 +526,7 @@ window.addEventListener('load', () => {
       ease: 'power2.in'
    });
 });
+
 })();
 
 /******/ })()
