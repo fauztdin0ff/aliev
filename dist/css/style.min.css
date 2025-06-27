@@ -502,11 +502,12 @@ body.no-scroll {
 .hero__subtitle {
   color: rgb(255, 255, 255);
   font-family: Gilroy;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 129.411765%;
   max-width: 620px;
   text-align: left;
+  text-transform: uppercase;
   will-change: transform;
 }
 @media (max-width: 980px) {
@@ -529,7 +530,7 @@ body.no-scroll {
 
 /*------------------------------About---------------------------*/
 .about {
-  background: linear-gradient(180deg, rgba(234, 234, 234, 0.9), rgba(212, 212, 212, 0.9) 100%);
+  background: linear-gradient(180deg, rgb(234, 234, 234), rgb(212, 212, 212) 100%);
   position: relative;
   overflow-x: clip !important;
   overflow-y: auto !important;
@@ -572,7 +573,7 @@ body.no-scroll {
 }
 .about__text {
   width: 100%;
-  max-width: 541px;
+  max-width: 555px;
   margin-left: auto;
   padding-left: 74px;
   color: rgb(0, 0, 0);

@@ -218,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
          activeReview.classList.add('show');
          animateReviewIn(activeReview);
 
+         ScrollTrigger.refresh();
+
          activeReview.scrollTo({
             top: 0,
             left: 0,
@@ -315,7 +317,8 @@ document.querySelectorAll('[data-slide]').forEach(link => {
 function animateReviewIn(review) {
    if (!review) return;
 
-   animateWordsFromBottom(document.querySelector('.review__title'));
+   gsap.registerPlugin(ScrollTrigger);
+   animateWordsFromBottom(review.querySelector('.review__title'));
 
    gsap.fromTo(review.querySelectorAll('.review__image img'), {
       clipPath: 'inset(100% 0% 0% 0%)'
@@ -326,8 +329,61 @@ function animateReviewIn(review) {
       ease: 'power3.out',
    });
 
-}
+   gsap.fromTo(review.querySelector('.review__main-image img'), {
+      clipPath: 'inset(0% 100% 0% 0%)'
+   }, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+         trigger: review.querySelector('.review__main'),
+         scroller: review,
+         start: 'top 90%',
+      }
+   });
 
+   gsap.fromTo(review.querySelectorAll('.review__main-who, .review__main-author, .review__main-author-details, .review__main-text, .review__main-text-under'), {
+      opacity: 1,
+      clipPath: 'inset(0% 100% 0% 0%)'
+   }, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 1,
+      ease: 'power3.out',
+      stagger: 0.15,
+      scrollTrigger: {
+         trigger: review.querySelector('.review__main-info'),
+         scroller: review,
+         start: 'top 90%',
+      }
+   });
+
+   gsap.fromTo(review.querySelectorAll('.review__gallery-card p'), {
+      clipPath: 'inset(0% 100% 0% 0%)'
+   }, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+         trigger: review.querySelector('.review__gallery-cards'),
+         scroller: review,
+         start: 'top 90%',
+      }
+   });
+
+   gsap.fromTo(review.querySelectorAll('.review__gallery-cards img'), {
+      clipPath: 'inset(100% 0% 0% 0%)'
+   }, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+         trigger: review.querySelector('.review__gallery-cards'),
+         scroller: review,
+         start: 'top 90%',
+      }
+   });
+
+}
 
 
 
