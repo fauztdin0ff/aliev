@@ -529,6 +529,7 @@ main {
 .about {
   background: linear-gradient(180deg, rgba(234, 234, 234, 0.9), rgba(212, 212, 212, 0.9) 100%);
   position: relative;
+  overflow: clip !important;
 }
 .about__overlay {
   position: absolute;
