@@ -135,20 +135,46 @@ document.addEventListener("DOMContentLoaded", function () {
 const previewElements = document.querySelectorAll('.reviews__preview');
 const customCursor = document.querySelector('.custom-cursor');
 
-previewElements.forEach(preview => {
-   preview.addEventListener('mouseenter', () => {
-      customCursor.style.display = 'flex';
+function enableCustomCursor() {
+   previewElements.forEach(preview => {
+      preview.addEventListener('mouseenter', showCursor);
+      preview.addEventListener('mouseleave', hideCursor);
+      preview.addEventListener('mousemove', moveCursor);
    });
+}
 
-   preview.addEventListener('mouseleave', () => {
-      customCursor.style.display = 'none';
+function disableCustomCursor() {
+   customCursor.style.display = 'none';
+   previewElements.forEach(preview => {
+      preview.removeEventListener('mouseenter', showCursor);
+      preview.removeEventListener('mouseleave', hideCursor);
+      preview.removeEventListener('mousemove', moveCursor);
    });
+}
 
-   preview.addEventListener('mousemove', (e) => {
-      customCursor.style.left = e.clientX + 'px';
-      customCursor.style.top = e.clientY + 'px';
-   });
-});
+function showCursor() {
+   customCursor.style.display = 'flex';
+}
+
+function hideCursor() {
+   customCursor.style.display = 'none';
+}
+
+function moveCursor(e) {
+   customCursor.style.left = e.clientX + 'px';
+   customCursor.style.top = e.clientY + 'px';
+}
+
+function handleCursorByScreenSize() {
+   if (window.innerWidth >= 1024) {
+      enableCustomCursor();
+   } else {
+      disableCustomCursor();
+   }
+}
+
+document.addEventListener('DOMContentLoaded', handleCursorByScreenSize);
+
 
 /*------------------------------Swiper in case---------------------------*/
 let swiperInstance = null;
