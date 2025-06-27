@@ -295,6 +295,10 @@ document.querySelectorAll('[data-slide]').forEach(link => {
          return;
       }
 
+      document.querySelectorAll('.review.show').forEach(review => {
+         review.classList.remove('show');
+      });
+
       document.querySelectorAll('[data-slide]').forEach(l => l.classList.remove('active'));
       link.classList.add('active');
 
