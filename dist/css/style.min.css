@@ -551,6 +551,8 @@ main {
   display: grid;
   grid-template-columns: 1fr 45%;
   align-items: center;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 @media (max-width: 980px) {
   .about__body {
@@ -559,7 +561,7 @@ main {
 }
 @media (max-width: 767px) {
   .about__body {
-    padding-top: 61px;
+    padding-top: 68px;
     width: 100%;
     height: auto;
     grid-template-columns: 1fr;
