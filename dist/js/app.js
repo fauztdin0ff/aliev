@@ -342,29 +342,36 @@ function animateReviewIn(review) {
       }
    });
 
-   gsap.fromTo(review.querySelectorAll('.review__main-who, .review__main-author, .review__main-author-details, .review__main-text, .review__main-text-under'), {
-      opacity: 1,
-      clipPath: 'inset(0% 100% 0% 0%)'
-   }, {
-      clipPath: 'inset(0% 0% 0% 0%)',
-      duration: 1,
-      ease: 'power3.out',
-      stagger: 0.15,
-      scrollTrigger: {
-         trigger: review.querySelector('.review__main-info'),
-         scroller: review,
-         start: 'top 90%',
-      }
-   });
+   const isMobile = window.innerWidth < 600;
 
-   gsap.fromTo(review.querySelectorAll('.review__gallery-card p'), {
+   gsap.fromTo(
+      review.querySelectorAll('.review__main-who, .review__main-author, .review__main-author-details, .review__main-text, .review__main-text-under'),
+      {
+         opacity: 1,
+         clipPath: 'inset(0% 100% 0% 0%)'
+      },
+      {
+         clipPath: 'inset(0% 0% 0% 0%)',
+         delay: isMobile ? 1 : 0,
+         duration: 1,
+         ease: 'power3.out',
+         stagger: 0.15,
+         scrollTrigger: {
+            trigger: review.querySelector('.review__main-info'),
+            scroller: review,
+            start: 'top 90%',
+         }
+      }
+   );
+
+   gsap.fromTo(review.querySelector('.review__gallery-card'), {
       clipPath: 'inset(0% 100% 0% 0%)'
    }, {
       clipPath: 'inset(0% 0% 0% 0%)',
       duration: 1,
       ease: 'power3.out',
       scrollTrigger: {
-         trigger: review.querySelector('.review__gallery-cards'),
+         trigger: review.querySelector('.review__gallery-card'),
          scroller: review,
          start: 'top 90%',
       }
@@ -486,6 +493,19 @@ function animateSlideIn(slide, index) {
             ease: 'power3.out',
             stagger: 0.1
          }, '-=0.5');
+         break;
+
+      case 3: // Contacts
+         tl.fromTo(slide.querySelectorAll('.contacts__item'), {
+            y: 30,
+            clipPath: 'inset(100% 0% 0% 0%)'
+         }, {
+            y: 0,
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 1,
+            stagger: 0.1,
+            ease: 'power3.out',
+         });
          break;
    }
 }
@@ -613,6 +633,21 @@ window.addEventListener('load', () => {
    });
 });
 
+
+/*------------------------------Hover contact---------------------------*/
+document.querySelectorAll('.contacts__item').forEach(link => {
+   link.addEventListener('mousemove', e => {
+      const rect = link.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      link.style.transform = `translate(${x * 0.8}px, ${y * 0.8}px)`;
+   });
+
+   link.addEventListener('mouseleave', () => {
+      link.style.transform = 'translate(0, 0)';
+   });
+});
 })();
 
 /******/ })()

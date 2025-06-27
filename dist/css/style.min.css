@@ -336,7 +336,7 @@ body.no-scroll {
 .header__menu ul li a.active svg {
   transform: scaleY(1);
 }
-.header__menu ul li:first-child a.active, .header__menu ul li:nth-child(2) a.active, .header__menu ul li:nth-child(3) a.active {
+.header__menu ul li:first-child a.active, .header__menu ul li:nth-child(2) a.active, .header__menu ul li:nth-child(4) a.active {
   pointer-events: none;
 }
 @media (hover: hover) {
@@ -352,8 +352,14 @@ body.no-scroll {
     flex-direction: column;
     gap: 30px;
   }
+  .header__menu ul li a {
+    color: #767676;
+  }
   .header__menu ul li a svg {
     display: none;
+  }
+  .header__menu ul li a.active {
+    color: #fff;
   }
   .header__menu ul li:last-child {
     display: none;
@@ -1083,6 +1089,7 @@ body.no-scroll {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  will-change: clip-path;
 }
 .review__gallery-card {
   display: flex;
@@ -1100,6 +1107,7 @@ body.no-scroll {
 .review__gallery-card img {
   width: 100%;
   height: 100%;
+  will-change: clip-path;
   object-fit: cover;
 }
 .review__gallery-card p {
@@ -1154,5 +1162,73 @@ body.no-scroll {
 @media (max-width: 1023px) {
   .custom-cursor {
     display: none !important;
+  }
+}
+
+/*------------------------------Contacts---------------------------*/
+.contacts {
+  background-image: url(../img/reviews/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: clip !important;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+.contacts__overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+.contacts__items {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 55px;
+}
+@media (max-width: 767px) {
+  .contacts__items {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 150px;
+    margin-inline: auto;
+  }
+}
+@media (hover: hover) {
+  .contacts__items:hover a:not(:hover) {
+    color: #767676;
+  }
+}
+.contacts__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Gilroy;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 133.333333%;
+  transition: all 0.2s linear 0s;
+  padding: 20px 0;
+}
+.contacts__item svg {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+.contacts__item span {
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .contacts__item {
+    padding: 0;
   }
 }
