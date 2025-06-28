@@ -182,6 +182,13 @@ body.no-scroll {
 .header__top.header__top-loading .header__button {
   opacity: 0;
 }
+.header__top.header__top-loading .preloader-progress {
+  display: block;
+}
+.header__top.header__top-loading .header__logo svg {
+  transform: translateY(100%);
+  opacity: 0;
+}
 .header__top-body, .header__bottom-body {
   display: flex;
   align-items: center;
@@ -228,8 +235,9 @@ body.no-scroll {
 }
 .header__logo {
   max-width: 40px;
+  width: 40px;
+  height: 31px;
   position: relative;
-  overflow: hidden;
 }
 .header__logo::before {
   content: "";
@@ -246,6 +254,16 @@ body.no-scroll {
   transform-origin: bottom;
   pointer-events: none;
   z-index: 2;
+}
+.header__logo .preloader-progress {
+  display: block;
+  color: #fff;
+  font-size: 46px;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  left: calc(50% - 50px);
+  display: none;
 }
 @media (hover: hover) {
   .header__logo:hover::before {
@@ -791,6 +809,7 @@ body.no-scroll {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  will-change: clip-path;
 }
 .reviews__preview-image img {
   width: 100%;
@@ -810,6 +829,7 @@ body.no-scroll {
   line-height: 105.882353%;
   max-width: 80%;
   text-wrap: balance;
+  will-change: clip-path;
 }
 @media (max-width: 1200px) {
   .reviews__preview-name {
@@ -911,6 +931,7 @@ body.no-scroll {
   max-width: 915px;
   width: 100%;
   height: 100%;
+  will-change: clip-path;
 }
 .review__main {
   display: flex;
@@ -944,6 +965,7 @@ body.no-scroll {
   height: 100%;
   object-fit: cover;
   max-height: 600px;
+  will-change: clip-path;
 }
 @media (max-width: 600px) {
   .review__main-image {
@@ -1017,6 +1039,7 @@ body.no-scroll {
   padding-bottom: 20px;
   border-bottom: 1px solid #d0d0d0;
   margin-bottom: 12px;
+  will-change: clip-path;
 }
 .review__main-text p:not(:last-child) {
   margin-bottom: 20px;
@@ -1218,6 +1241,7 @@ body.no-scroll {
   line-height: 133.333333%;
   transition: all 0.2s linear 0s;
   padding: 20px 0;
+  will-change: transform, clip-path;
 }
 .contacts__item svg {
   width: 22px;

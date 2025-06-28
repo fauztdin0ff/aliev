@@ -521,13 +521,13 @@ function animateSlideOut(slide, index) {
          case 0: // Hero
             tl.to(slide.querySelectorAll('.hero__title span'), {
                opacity: 0,
-               duration: 0.3,
+               duration: 0.1,
                ease: 'power1.in'
             });
 
             tl.to(slide.querySelectorAll('.hero__subtitle'), {
                opacity: 0,
-               duration: 0.3,
+               duration: 0.1,
                ease: 'power1.in'
             }, "<");
 
@@ -539,10 +539,10 @@ function animateSlideOut(slide, index) {
             break;
 
          case 1: // About
-            tl.to(slide.querySelectorAll('.about__text p, .about__text h3, .about__text h4'), {
+
+            tl.to(slide.querySelectorAll('.about__text h2,.about__text p, .about__text h3, .about__text h4'), {
                opacity: 0,
-               y: 20,
-               duration: 0.5,
+               duration: 0.1,
                ease: 'power1.in'
             });
 
@@ -596,14 +596,50 @@ function animateWordsFromBottom(element) {
 }
 
 // ----------------------------- Стартовая инициализация -----------------------------
-window.addEventListener('load', () => {
-   const heroTitle = document.querySelector('.hero__title');
-   wrapWords(heroTitle);
+const progressEl = document.querySelector('.preloader-progress');
+const progressObj = { value: 0 };
 
+const progressTween = gsap.to(progressObj, {
+   value: 100,
+   duration: 3,
+   ease: 'power1.out',
+   onUpdate() {
+      progressEl.textContent = `${Math.round(progressObj.value)}%`;
+   }
+});
+
+Promise.all([
+   new Promise(resolve => window.addEventListener('load', resolve)),
+   document.fonts.ready
+]).then(() => {
+   if (progressObj.value >= 100) {
+      launchAnimations();
+   } else {
+      progressTween.eventCallback('onComplete', launchAnimations);
+   }
+});
+
+function launchAnimations() {
    animateSlideIn(mainSlider.slides[mainSlider.activeIndex], mainSlider.activeIndex);
+
+   gsap.to('.preloader-progress', {
+      y: '-100%',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.out',
+   });
+
+   gsap.to('.header__logo svg', {
+      y: '0',
+      delay: 1,
+      opacity: 1,
+      duration: 0.5,
+      ease: 'power2.out',
+   });
 
    gsap.to('.header__top', {
       height: 68,
+      delay: 2,
       opacity: 1,
       duration: 1,
       ease: 'power2.out',
@@ -618,7 +654,7 @@ window.addEventListener('load', () => {
    }, {
       y: 0,
       opacity: 1,
-      delay: 0.8,
+      delay: 3,
       duration: 1,
       ease: 'power2.out'
    });
@@ -627,11 +663,32 @@ window.addEventListener('load', () => {
       opacity: 0
    }, {
       opacity: 1,
-      delay: 1,
+      delay: 4,
       duration: 1,
       ease: 'power2.in'
    });
-});
+
+   gsap.fromTo('.hero__title', {
+      y: 40,
+      opacity: 0
+   }, {
+      y: 0,
+      opacity: 1,
+      delay: 3,
+      duration: 1,
+      ease: 'power3.out'
+   });
+   gsap.fromTo('.hero__subtitle p', {
+      opacity: 1,
+      clipPath: 'inset(0% 100% 0% 0%)'
+   }, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 1,
+      delay: 3.5,
+      ease: 'power3.out',
+      stagger: 0.1
+   });
+}
 
 
 /*------------------------------Hover contact---------------------------*/
