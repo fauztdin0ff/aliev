@@ -1,93 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Favicon -->
+   <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="img/fav/android-chrome-192x192.png">
+   <link rel="icon" type="image/png" sizes="512x512" href="img/fav/android-chrome-512x512.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+   <link rel="icon" type="image/x-icon" href="img/fav/favicon.ico">
+   <meta name="msapplication-TileColor" content="#000000">
+   <meta name="theme-color" content="#000000">
+   <!-- Meta Description -->
+   <meta name="description" content="Профессиональный агент по недвижимости">
+   <!-- Open Graph (для соцсетей) -->
+   <meta property="og:title" content="Гамид Алиев">
+   <meta property="og:description" content="Профессиональный агент по недвижимости">
+   <meta property="og:image" content="img/fav/og-image.jpg">
+   <meta property="og:url" content="">
+   <meta property="og:type" content="website">
+   <!-- Styles-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
    <link rel="stylesheet" href="css/style.min.css">
-   <title>Главная</title>
+   <title>Гамид Алиев</title>
 </head>
 
 <body>
    <div class="wrapper">
       <header class="header">
-   <div class="header__top header__top-loading">
-      <div class="header__top-body container">
-         <div class="header__button">
-            <button type="button" data-slide="4">Контакты</button>
+         <div class="header__top header__top-loading">
+            <div class="header__top-body container">
+               <div class="header__button">
+                  <button type="button" data-slide="4">Контакты</button>
+               </div>
+               <div class="header__logo">
+                  <a href="index.html" aria-label="Главная страница">
+                     <svg width="40" height="31" class="header__logo-icon" viewBox="0 0 40 31" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_2217_1496)">
+                           <path
+                              d="M15.1001 15.9V18.6H26.7001C26.4569 21.0988 25.2345 23.3997 23.3001 25C21.0471 26.7449 18.2467 27.6311 15.4001 27.5C13.7471 27.5572 12.1006 27.2662 10.5674 26.646C9.03415 26.0259 7.64842 25.0903 6.50007 23.9C5.35306 22.7661 4.45069 21.409 3.8487 19.9126C3.24672 18.4163 2.9579 16.8124 3.00007 15.2C2.94404 13.571 3.22611 11.948 3.8285 10.4335C4.43089 8.9189 5.34053 7.54555 6.50007 6.40001C7.64842 5.20973 9.03415 4.27415 10.5674 3.65397C12.1006 3.03378 13.7471 2.74283 15.4001 2.80001C17.5046 2.8069 19.5715 3.35809 21.4001 4.40001L22.3001 5.1H26.8001C23.8381 1.92613 19.7385 0.0561582 15.4001 -0.0999945C13.3639 -0.151859 11.3384 0.21152 9.44727 0.967991C7.5561 1.72446 5.83878 2.85817 4.40006 4.30001C2.96871 5.70482 1.83995 7.38768 1.08326 9.24501C0.326567 11.1024 -0.0420519 13.0949 6.8797e-05 15.1C-0.034247 17.0892 0.338343 19.0644 1.09498 20.9044C1.85161 22.7444 2.97632 24.4104 4.40006 25.8C5.82428 27.2614 7.53906 28.408 9.43372 29.1659C11.3284 29.9238 13.3609 30.276 15.4001 30.2C19.8001 30.2 23.3001 29 25.9001 26.5C27.125 25.305 28.0937 23.8729 28.747 22.2912C29.4004 20.7094 29.7247 19.0112 29.7001 17.3V15.8L15.1001 15.9Z"
+                              fill="white" />
+                           <path class="header__logo-icon-path"
+                              d="M29.7999 0.399988L27.2 0.299988L36.9 30L40 30.1L29.7999 0.399988Z" fill="white" />
+                        </g>
+                        <defs>
+                           <clipPath id="clip0_2217_1496">
+                              <rect width="40" height="30.3" fill="white" />
+                           </clipPath>
+                        </defs>
+                     </svg>
+                     <span class="preloader-progress">0%</span>
+                  </a>
+               </div>
+               <div class="header__button">
+                  <button type="button" class="menu-toggle"><span>Меню</span><span>Закрыть</span></button>
+               </div>
+            </div>
          </div>
-         <div class="header__logo">
-            <a href="index.html" aria-label="Главная страница">
-               <svg width="40" height="31" class="header__logo-icon" viewBox="0 0 40 31" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2217_1496)">
-                     <path
-                        d="M15.1001 15.9V18.6H26.7001C26.4569 21.0988 25.2345 23.3997 23.3001 25C21.0471 26.7449 18.2467 27.6311 15.4001 27.5C13.7471 27.5572 12.1006 27.2662 10.5674 26.646C9.03415 26.0259 7.64842 25.0903 6.50007 23.9C5.35306 22.7661 4.45069 21.409 3.8487 19.9126C3.24672 18.4163 2.9579 16.8124 3.00007 15.2C2.94404 13.571 3.22611 11.948 3.8285 10.4335C4.43089 8.9189 5.34053 7.54555 6.50007 6.40001C7.64842 5.20973 9.03415 4.27415 10.5674 3.65397C12.1006 3.03378 13.7471 2.74283 15.4001 2.80001C17.5046 2.8069 19.5715 3.35809 21.4001 4.40001L22.3001 5.1H26.8001C23.8381 1.92613 19.7385 0.0561582 15.4001 -0.0999945C13.3639 -0.151859 11.3384 0.21152 9.44727 0.967991C7.5561 1.72446 5.83878 2.85817 4.40006 4.30001C2.96871 5.70482 1.83995 7.38768 1.08326 9.24501C0.326567 11.1024 -0.0420519 13.0949 6.8797e-05 15.1C-0.034247 17.0892 0.338343 19.0644 1.09498 20.9044C1.85161 22.7444 2.97632 24.4104 4.40006 25.8C5.82428 27.2614 7.53906 28.408 9.43372 29.1659C11.3284 29.9238 13.3609 30.276 15.4001 30.2C19.8001 30.2 23.3001 29 25.9001 26.5C27.125 25.305 28.0937 23.8729 28.747 22.2912C29.4004 20.7094 29.7247 19.0112 29.7001 17.3V15.8L15.1001 15.9Z"
-                        fill="white" />
-                     <path class="header__logo-icon-path"
-                        d="M29.7999 0.399988L27.2 0.299988L36.9 30L40 30.1L29.7999 0.399988Z" fill="white" />
-                  </g>
-                  <defs>
-                     <clipPath id="clip0_2217_1496">
-                        <rect width="40" height="30.3" fill="white" />
-                     </clipPath>
-                  </defs>
-               </svg>
-               <span class="preloader-progress">0%</span>
-            </a>
+         <div class="header__bottom">
+            <div class="header__bottom-body container">
+               <nav class="header__menu">
+                  <ul>
+                     <li>
+                        <a href="" class="active" data-slide="0">
+                           <svg>
+                              <use xlink:href="#icon-arrow"></use>
+                           </svg>
+                           Главная</a>
+                     </li>
+                     <li>
+                        <a href="" data-slide="1">
+                           <svg>
+                              <use xlink:href="#icon-arrow"></use>
+                           </svg>
+                           Обо мне</a>
+                     </li>
+                     <li>
+                        <a href="" data-slide="2">
+                           <svg>
+                              <use xlink:href="#icon-arrow"></use>
+                           </svg>
+                           Отзывы</a>
+                     </li>
+                     <li>
+                        <a href="" data-slide="3">
+                           <svg>
+                              <use xlink:href="#icon-arrow"></use>
+                           </svg>
+                           Контакты</a>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
          </div>
-         <div class="header__button">
-            <button type="button" class="menu-toggle"><span>Меню</span><span>Закрыть</span></button>
-         </div>
-      </div>
-   </div>
-   <div class="header__bottom">
-      <div class="header__bottom-body container">
-         <nav class="header__menu">
+         <div class="submenu">
             <ul>
-               <li>
-                  <a href="" class="active" data-slide="0">
-                     <svg>
-                        <use xlink:href="#icon-arrow"></use>
-                     </svg>
-                     Главная</a>
-               </li>
-               <li>
-                  <a href="" data-slide="1">
-                     <svg>
-                        <use xlink:href="#icon-arrow"></use>
-                     </svg>
-                     Обо мне</a>
-               </li>
-               <li>
-                  <a href="" data-slide="2">
-                     <svg>
-                        <use xlink:href="#icon-arrow"></use>
-                     </svg>
-                     Отзывы</a>
-               </li>
-               <li>
-                  <a href="" data-slide="3">
-                     <svg>
-                        <use xlink:href="#icon-arrow"></use>
-                     </svg>
-                     Контакты</a>
-               </li>
+               <li><a href="" data-review="1">Пентхаус в ЖК «Смоленская Застава»</a></li>
+               <li><a href="" data-review="2">Пентхаус в ЖК «Савеловский Сити»</a></li>
+               <li><a href="" data-review="3">Redside</a></li>
+               <li><a href="" data-review="4">Skyview - 1</a></li>
+               <li><a href="" data-review="5">Skyview - 2</a></li>
             </ul>
-         </nav>
-      </div>
-   </div>
-   <div class="submenu">
-      <ul>
-         <li><a href="" data-review="1">Пентхаус в ЖК «Смоленская Застава»</a></li>
-         <li><a href="" data-review="2">Пентхаус в ЖК «Савеловский Сити»</a></li>
-         <li><a href="" data-review="3">Redside</a></li>
-         <li><a href="" data-review="4">Skyview - 1</a></li>
-         <li><a href="" data-review="5">Skyview - 2</a></li>
-      </ul>
-   </div>
-</header>
+         </div>
+      </header>
       <main>
          <div class="main-slider swiper">
             <div class="main-slider-wrapper swiper-wrapper">
@@ -132,7 +151,10 @@
                         </p>
                      </div>
                      <div class="about__image">
-                        <img src="img/aliev-photo.png" width="551" height="803" alt="Алиев Гамид">
+                        <picture>
+                           <source srcset="img/aliev-photo.webp" type="image/webp"><img src="img/aliev-photo.png"
+                              width="551" height="803" alt="Алиев Гамид">
+                        </picture>
                      </div>
                   </div>
                   <div class="about__overlay"></div>
@@ -142,7 +164,11 @@
                      <div class="reviews__previews">
                         <div class="reviews__preview" data-preview="1">
                            <div class="reviews__preview-image">
-                              <img src="img/reviews/1.png" width="643" height="384" alt="Отзыв фото">
+                              <picture>
+                                 <source srcset="img/reviews/1.avif" type="image/avif">
+                                 <source srcset="img/reviews/1.webp" type="image/webp">
+                                 <img src="img/reviews/1.png" width="643" height="384" alt="Отзыв фото">
+                              </picture>
                            </div>
                            <h3 class="reviews__preview-name">Пентхаус в ЖК<br> «Смоленская Застава»</h3>
                            <div class="reviews__preview-overlay"></div>
@@ -150,7 +176,11 @@
 
                         <div class="reviews__preview" data-preview="2">
                            <div class="reviews__preview-image">
-                              <img src="img/reviews/2.png" width="288" height="171" alt="Отзыв фото">
+                              <picture>
+                                 <source srcset="img/reviews/2.avif" type="image/avif">
+                                 <source srcset="img/reviews/2.webp" type="image/webp">
+                                 <img src="img/reviews/2.png" width="288" height="171" alt="Отзыв фото">
+                              </picture>
                            </div>
                            <h3 class="reviews__preview-name">Пентхаус в ЖК<br> «Савеловский Сити»</h3>
                            <div class="reviews__preview-overlay"></div>
@@ -158,7 +188,11 @@
 
                         <div class="reviews__preview" data-preview="3">
                            <div class="reviews__preview-image">
-                              <img src="img/reviews/4.png" width="288" height="171" alt="Отзыв фото">
+                              <picture>
+                                 <source srcset="img/reviews/4.avif" type="image/avif">
+                                 <source srcset="img/reviews/4.webp" type="image/webp">
+                                 <img src="img/reviews/4.png" width="288" height="171" alt="Отзыв фото">
+                              </picture>
                            </div>
                            <h3 class="reviews__preview-name">Жилой квартал<br> премиум-класса RedSide</h3>
                            <div class="reviews__preview-overlay"></div>
@@ -166,7 +200,11 @@
 
                         <div class="reviews__preview" data-preview="4">
                            <div class="reviews__preview-image">
-                              <img src="img/reviews/3.png" width="288" height="171" alt="Отзыв фото">
+                              <picture>
+                                 <source srcset="img/reviews/3.avif" type="image/avif">
+                                 <source srcset="img/reviews/3.webp" type="image/webp">
+                                 <img src="img/reviews/3.png" width="288" height="171" alt="Отзыв фото">
+                              </picture>
                            </div>
                            <h3 class="reviews__preview-name">Жилой квартал<br> «Skyview» - 1</h3>
                            <div class="reviews__preview-overlay"></div>
@@ -174,7 +212,11 @@
 
                         <div class="reviews__preview" data-preview="5">
                            <div class="reviews__preview-image">
-                              <img src="img/reviews/5.png" width="288" height="171" alt="Отзыв фото">
+                              <picture>
+                                 <source srcset="img/reviews/5.avif" type="image/avif">
+                                 <source srcset="img/reviews/5.webp" type="image/webp">
+                                 <img src="img/reviews/5.png" width="288" height="171" alt="Отзыв фото">
+                              </picture>
                            </div>
                            <h3 class="reviews__preview-name">Жилой квартал<br> «Skyview» - 2</h3>
                            <div class="reviews__preview-overlay"></div>
@@ -191,18 +233,29 @@
                            <div class="review__head">
                               <div class="review__title">Пентхаус в ЖК «Смоленская Застава»</div>
                               <div class="review__image">
-                                 <img src="img/cases/1.png" width="915" height="382" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/1.avif" type="image/avif">
+                                    <source srcset="img/cases/1.webp" type="image/webp">
+                                    <img src="img/cases/1.png" width="915" height="382" alt="Кейс фото">
+                                 </picture>
                               </div>
                            </div>
                            <div class="review__main">
                               <div class="review__main-image">
-                                 <img src="img/cases/1-2.png" width="658" height="538" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/1-2.avif" type="image/avif">
+                                    <source srcset="img/cases/1-2.webp" type="image/webp">
+                                    <img src="img/cases/1-2.png" width="658" height="538" alt="Кейс фото">
+                                 </picture>
                               </div>
                               <div class="review__main-info">
                                  <div class="review__main-who">Собственник о продаже пентхауса</div>
                                  <div class="review__main-author">
                                     <div class="review__main-author-photo">
-                                       <img src="img/reviews/author-1.png" width="88" height="88" alt="Фото автора">
+                                       <picture>
+                                          <source srcset="img/reviews/author-1.webp" type="image/webp">
+                                          <img src="img/reviews/author-1.png" width="88" height="88" alt="Фото автора">
+                                       </picture>
                                     </div>
                                     <div class="review__main-author-details">
                                        <p>Борис Шафиров</p>
@@ -251,16 +304,32 @@
                                  <div class="review__gallery-slider swiper">
                                     <div class="swiper-wrapper">
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/1-3.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/1-3.avif" type="image/avif">
+                                             <source srcset="img/cases/1-3.webp" type="image/webp">
+                                             <img src="img/cases/1-3.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/1-5.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/1-5.avif" type="image/avif">
+                                             <source srcset="img/cases/1-5.webp" type="image/webp">
+                                             <img src="img/cases/1-5.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/1-2.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/1-2.avif" type="image/avif">
+                                             <source srcset="img/cases/1-2.webp" type="image/webp">
+                                             <img src="img/cases/1-2.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/1-4.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/1-4.avif" type="image/avif">
+                                             <source srcset="img/cases/1-4.webp" type="image/webp">
+                                             <img src="img/cases/1-4.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                     </div>
                                  </div>
@@ -274,16 +343,32 @@
                                     <p><b>Результат:</b> реализация объекта за 2 месяца по максимальной цене.</p>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/1-3.png" width="717" height="538" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/1-3.avif" type="image/avif">
+                                       <source srcset="img/cases/1-3.webp" type="image/webp">
+                                       <img src="img/cases/1-3.png" width="717" height="538" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/1-5.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/1-5.avif" type="image/avif">
+                                       <source srcset="img/cases/1-5.webp" type="image/webp">
+                                       <img src="img/cases/1-5.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/1-2.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/1-2.avif" type="image/avif">
+                                       <source srcset="img/cases/1-2.webp" type="image/webp">
+                                       <img src="img/cases/1-2.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/1-4.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/1-4.avif" type="image/avif">
+                                       <source srcset="img/cases/1-4.webp" type="image/webp">
+                                       <img src="img/cases/1-4.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                               </div>
                            </div>
@@ -301,18 +386,29 @@
                            <div class="review__head">
                               <div class="review__title">Эксклюзивный пентхаус в ЖК «Савеловский Сити»</div>
                               <div class="review__image">
-                                 <img src="img/cases/2.png" width="915" height="382" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/2.avif" type="image/avif">
+                                    <source srcset="img/cases/2.webp" type="image/webp">
+                                    <img src="img/cases/2.png" width="915" height="382" alt="Кейс фото">
+                                 </picture>
                               </div>
                            </div>
                            <div class="review__main">
                               <div class="review__main-image">
-                                 <img src="img/cases/2-1.png" width="658" height="538" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/2-1.avif" type="image/avif">
+                                    <source srcset="img/cases/2-1.webp" type="image/webp">
+                                    <img src="img/cases/2-1.png" width="658" height="538" alt="Кейс фото">
+                                 </picture>
                               </div>
                               <div class="review__main-info">
                                  <div class="review__main-who">Собственница о продаже пентхауса</div>
                                  <div class="review__main-author">
                                     <div class="review__main-author-photo">
-                                       <img src="img/reviews/author-2.png" width="88" height="88" alt="Фото автора">
+                                       <picture>
+                                          <source srcset="img/reviews/author-2.webp" type="image/webp">
+                                          <img src="img/reviews/author-2.png" width="88" height="88" alt="Фото автора">
+                                       </picture>
                                     </div>
                                     <div class="review__main-author-details">
                                        <p>Дарья <br> Лоскутникова</p>
@@ -345,16 +441,32 @@
                                  <div class="review__gallery-slider swiper">
                                     <div class="swiper-wrapper">
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/2-2.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/2-2.avif" type="image/avif">
+                                             <source srcset="img/cases/2-2.webp" type="image/webp">
+                                             <img src="img/cases/2-2.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/2-3.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/2-3.avif" type="image/avif">
+                                             <source srcset="img/cases/2-3.webp" type="image/webp">
+                                             <img src="img/cases/2-3.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/2-4.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/2-4.avif" type="image/avif">
+                                             <source srcset="img/cases/2-4.webp" type="image/webp">
+                                             <img src="img/cases/2-4.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/2-5.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/2-5.avif" type="image/avif">
+                                             <source srcset="img/cases/2-5.webp" type="image/webp">
+                                             <img src="img/cases/2-5.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                     </div>
                                  </div>
@@ -367,16 +479,32 @@
                                     <p><b>Результат:</b> сделка состоялась</p>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/2-2.png" width="717" height="538" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/2-2.avif" type="image/avif">
+                                       <source srcset="img/cases/2-2.webp" type="image/webp">
+                                       <img src="img/cases/2-2.png" width="717" height="538" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/2-3.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/2-3.avif" type="image/avif">
+                                       <source srcset="img/cases/2-3.webp" type="image/webp">
+                                       <img src="img/cases/2-3.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/2-4.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/2-4.avif" type="image/avif">
+                                       <source srcset="img/cases/2-4.webp" type="image/webp">
+                                       <img src="img/cases/2-4.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/2-5.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/2-5.avif" type="image/avif">
+                                       <source srcset="img/cases/2-5.webp" type="image/webp">
+                                       <img src="img/cases/2-5.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                               </div>
                            </div>
@@ -394,18 +522,29 @@
                            <div class="review__head">
                               <div class="review__title">Жилой квартал премиум-класса RedSide</div>
                               <div class="review__image">
-                                 <img src="img/cases/3.png" width="915" height="382" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/3.avif" type="image/avif">
+                                    <source srcset="img/cases/3.webp" type="image/webp">
+                                    <img src="img/cases/3.png" width="915" height="382" alt="Кейс фото">
+                                 </picture>
                               </div>
                            </div>
                            <div class="review__main">
                               <div class="review__main-image">
-                                 <img src="img/cases/3-1.png" width="658" height="538" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/3-1.avif" type="image/avif">
+                                    <source srcset="img/cases/3-1.webp" type="image/webp">
+                                    <img src="img/cases/3-1.png" width="658" height="538" alt="Кейс фото">
+                                 </picture>
                               </div>
                               <div class="review__main-info">
                                  <div class="review__main-who">Собственница о продаже пентхауса</div>
                                  <div class="review__main-author">
                                     <div class="review__main-author-photo">
-                                       <img src="img/reviews/author-3.png" width="88" height="88" alt="Фото автора">
+                                       <picture>
+                                          <source srcset="img/reviews/author-3.webp" type="image/webp">
+                                          <img src="img/reviews/author-3.png" width="88" height="88" alt="Фото автора">
+                                       </picture>
                                     </div>
                                     <div class="review__main-author-details">
                                        <p>Екатерина <br> Мальцева </p>
@@ -436,16 +575,32 @@
                                  <div class="review__gallery-slider swiper">
                                     <div class="swiper-wrapper">
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/3-2.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/3-2.avif" type="image/avif">
+                                             <source srcset="img/cases/3-2.webp" type="image/webp">
+                                             <img src="img/cases/3-2.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/3-3.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/3-3.avif" type="image/avif">
+                                             <source srcset="img/cases/3-3.webp" type="image/webp">
+                                             <img src="img/cases/3-3.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/3-4.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/3-4.avif" type="image/avif">
+                                             <source srcset="img/cases/3-4.webp" type="image/webp">
+                                             <img src="img/cases/3-4.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/3-5.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/3-5.avif" type="image/avif">
+                                             <source srcset="img/cases/3-5.webp" type="image/webp">
+                                             <img src="img/cases/3-5.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                     </div>
                                  </div>
@@ -464,16 +619,32 @@
                                     <p><b>Результат:</b> продажа за две недели, без торга.</p>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/3-2.png" width="717" height="538" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/3-2.avif" type="image/avif">
+                                       <source srcset="img/cases/3-2.webp" type="image/webp">
+                                       <img src="img/cases/3-2.png" width="717" height="538" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/3-3.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/3-3.avif" type="image/avif">
+                                       <source srcset="img/cases/3-3.webp" type="image/webp">
+                                       <img src="img/cases/3-3.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/3-4.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/3-4.avif" type="image/avif">
+                                       <source srcset="img/cases/3-4.webp" type="image/webp">
+                                       <img src="img/cases/3-4.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/3-5.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/3-5.avif" type="image/avif">
+                                       <source srcset="img/cases/3-5.webp" type="image/webp">
+                                       <img src="img/cases/3-5.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                               </div>
                            </div>
@@ -491,18 +662,29 @@
                            <div class="review__head">
                               <div class="review__title">Жилой квартал «Skyview» - 1</div>
                               <div class="review__image">
-                                 <img src="img/cases/4.png" width="915" height="382" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/4.avif" type="image/avif">
+                                    <source srcset="img/cases/4.webp" type="image/webp">
+                                    <img src="img/cases/4.png" width="915" height="382" alt="Кейс фото">
+                                 </picture>
                               </div>
                            </div>
                            <div class="review__main">
                               <div class="review__main-image">
-                                 <img src="img/cases/4-1.png" width="658" height="538" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/4-1.avif" type="image/avif">
+                                    <source srcset="img/cases/4-1.webp" type="image/webp">
+                                    <img src="img/cases/4-1.png" width="658" height="538" alt="Кейс фото">
+                                 </picture>
                               </div>
                               <div class="review__main-info">
                                  <div class="review__main-who">Собственница о продаже пентхауса</div>
                                  <div class="review__main-author">
                                     <div class="review__main-author-photo">
-                                       <img src="img/reviews/author-4.png" width="88" height="88" alt="Фото автора">
+                                       <picture>
+                                          <source srcset="img/reviews/author-4.webp" type="image/webp">
+                                          <img src="img/reviews/author-4.png" width="88" height="88" alt="Фото автора">
+                                       </picture>
                                     </div>
                                     <div class="review__main-author-details">
                                        <p>Сергей Ишков</p>
@@ -536,16 +718,32 @@
                                  <div class="review__gallery-slider swiper">
                                     <div class="swiper-wrapper">
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/4-2.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/4-2.avif" type="image/avif">
+                                             <source srcset="img/cases/4-2.webp" type="image/webp">
+                                             <img src="img/cases/4-2.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/4-3.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/4-3.avif" type="image/avif">
+                                             <source srcset="img/cases/4-3.webp" type="image/webp">
+                                             <img src="img/cases/4-3.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/4-4.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/4-4.avif" type="image/avif">
+                                             <source srcset="img/cases/4-4.webp" type="image/webp">
+                                             <img src="img/cases/4-4.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/4-5.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/4-5.avif" type="image/avif">
+                                             <source srcset="img/cases/4-5.webp" type="image/webp">
+                                             <img src="img/cases/4-5.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                     </div>
                                  </div>
@@ -563,16 +761,32 @@
                                        сделку.</p>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/4-2.png" width="717" height="538" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/4-2.avif" type="image/avif">
+                                       <source srcset="img/cases/4-2.webp" type="image/webp">
+                                       <img src="img/cases/4-2.png" width="717" height="538" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/4-3.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/4-3.avif" type="image/avif">
+                                       <source srcset="img/cases/4-3.webp" type="image/webp">
+                                       <img src="img/cases/4-3.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/4-4.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/4-4.avif" type="image/avif">
+                                       <source srcset="img/cases/4-4.webp" type="image/webp">
+                                       <img src="img/cases/4-4.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/4-5.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/4-5.avif" type="image/avif">
+                                       <source srcset="img/cases/4-5.webp" type="image/webp">
+                                       <img src="img/cases/4-5.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                               </div>
                            </div>
@@ -590,18 +804,29 @@
                            <div class="review__head">
                               <div class="review__title">Жилой квартал «Skyview» - 2</div>
                               <div class="review__image">
-                                 <img src="img/cases/5.png" width="915" height="382" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/5.avif" type="image/avif">
+                                    <source srcset="img/cases/5.webp" type="image/webp">
+                                    <img src="img/cases/5.png" width="915" height="382" alt="Кейс фото">
+                                 </picture>
                               </div>
                            </div>
                            <div class="review__main">
                               <div class="review__main-image">
-                                 <img src="img/cases/5-1.png" width="658" height="538" alt="Кейс фото">
+                                 <picture>
+                                    <source srcset="img/cases/5-1.avif" type="image/avif">
+                                    <source srcset="img/cases/5-1.webp" type="image/webp">
+                                    <img src="img/cases/5-1.png" width="658" height="538" alt="Кейс фото">
+                                 </picture>
                               </div>
                               <div class="review__main-info">
                                  <div class="review__main-who">Собственница о продаже пентхауса</div>
                                  <div class="review__main-author">
                                     <div class="review__main-author-photo">
-                                       <img src="img/reviews/author-5.png" width="88" height="88" alt="Фото автора">
+                                       <picture>
+                                          <source srcset="img/reviews/author-5.webp" type="image/webp">
+                                          <img src="img/reviews/author-5.png" width="88" height="88" alt="Фото автора">
+                                       </picture>
                                     </div>
                                     <div class="review__main-author-details">
                                        <p>Дмитрий Петров</p>
@@ -640,16 +865,32 @@
                                  <div class="review__gallery-slider swiper">
                                     <div class="swiper-wrapper">
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/5-2.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/5-2.avif" type="image/avif">
+                                             <source srcset="img/cases/5-2.webp" type="image/webp">
+                                             <img src="img/cases/5-2.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/5-3.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/5-3.avif" type="image/avif">
+                                             <source srcset="img/cases/5-3.webp" type="image/webp">
+                                             <img src="img/cases/5-3.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/5-4.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/5-4.avif" type="image/avif">
+                                             <source srcset="img/cases/5-4.webp" type="image/webp">
+                                             <img src="img/cases/5-4.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                        <div class="review__gallery-slide swiper-slide">
-                                          <img src="img/cases/5-5.png" width="320" height="227" alt="Кейс фото">
+                                          <picture>
+                                             <source srcset="img/cases/5-5.avif" type="image/avif">
+                                             <source srcset="img/cases/5-5.webp" type="image/webp">
+                                             <img src="img/cases/5-5.png" width="320" height="227" alt="Кейс фото">
+                                          </picture>
                                        </div>
                                     </div>
                                  </div>
@@ -670,16 +911,32 @@
                                     </p>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/5-2.png" width="717" height="538" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/5-2.avif" type="image/avif">
+                                       <source srcset="img/cases/5-2.webp" type="image/webp">
+                                       <img src="img/cases/5-2.png" width="717" height="538" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/5-3.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/5-3.avif" type="image/avif">
+                                       <source srcset="img/cases/5-3.webp" type="image/webp">
+                                       <img src="img/cases/5-3.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/5-4.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/5-4.avif" type="image/avif">
+                                       <source srcset="img/cases/5-4.webp" type="image/webp">
+                                       <img src="img/cases/5-4.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                                  <div class="review__gallery-card desctop-only">
-                                    <img src="img/cases/5-5.png" width="327" height="245" alt="Кейс фото">
+                                    <picture>
+                                       <source srcset="img/cases/5-5.avif" type="image/avif">
+                                       <source srcset="img/cases/5-5.webp" type="image/webp">
+                                       <img src="img/cases/5-5.png" width="327" height="245" alt="Кейс фото">
+                                    </picture>
                                  </div>
                               </div>
                            </div>
@@ -721,62 +978,61 @@
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-   <script src="https://unpkg.com/split-type"></script>
    <script src="js/app.js"></script>
    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="display: none;"
-   xmlns:xlink="http://www.w3.org/1999/xlink">
-   <svg fill="none" viewBox="0 0 8 5" id="icon-arrow" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3.535.536h3.536L3.535 4.07 0 .536h3.535Z" fill="currentColor" />
-   </svg>
-   <svg fill="none" viewBox="0 0 40 40" id="icon-chat" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#ba)">
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg fill="none" viewBox="0 0 8 5" id="icon-arrow" xmlns="http://www.w3.org/2000/svg">
+         <path d="M3.535.536h3.536L3.535 4.07 0 .536h3.535Z" fill="currentColor" />
+      </svg>
+      <svg fill="none" viewBox="0 0 40 40" id="icon-chat" xmlns="http://www.w3.org/2000/svg">
+         <g clip-path="url(#ba)">
+            <path
+               d="M0 26.35a7.365 7.365 0 0 0 7.302 7.3h12.317l6.032 6.096a1.079 1.079 0 0 0 1.08.19 1.015 1.015 0 0 0 .57-.888V33.65h5.397A7.365 7.365 0 0 0 40 26.349V7.302A7.365 7.365 0 0 0 32.698 0H7.302A7.365 7.365 0 0 0 0 7.302v19.047ZM10.35 9.523h12.698a.953.953 0 0 1 0 1.905H10.349a.952.952 0 0 1 0-1.905Zm.126 6.349h19.048a.952.952 0 0 1 0 1.905H10.476a.952.952 0 0 1 0-1.905Zm0 6.35h19.048a.952.952 0 0 1 0 1.904H10.476a.952.952 0 0 1 0-1.905Z"
+               fill="currentColor" />
+         </g>
+         <defs>
+            <clipPath id="ba">
+               <path fill="currentColor" d="M0 0h40v40H0z" />
+            </clipPath>
+         </defs>
+      </svg>
+      <svg fill="none" viewBox="0 0 21 20" id="icon-instagram" xmlns="http://www.w3.org/2000/svg">
+         <rect x=".75" y=".75" width="19.19" height="18.5" rx="4.25" stroke="currentColor" stroke-width="1.5" />
+         <circle cx="10.69" cy="10" r="4.422" stroke="currentColor" stroke-width="1.5" />
+         <circle cx="16.207" cy="4.483" r="1.034" fill="currentColor" />
+      </svg>
+      <svg fill="none" viewBox="0 0 40 31" id="icon-logo" xmlns="http://www.w3.org/2000/svg">
+         <g clip-path="url(#da)" fill="currentColor">
+            <path
+               d="M15.1 15.9v2.7h11.6a9.5 9.5 0 0 1-3.4 6.4 12 12 0 0 1-7.9 2.5 11.8 11.8 0 0 1-8.9-3.6A11.8 11.8 0 0 1 3 15.2a11.8 11.8 0 0 1 3.5-8.8 11.8 11.8 0 0 1 8.9-3.6 12.2 12.2 0 0 1 6 1.6l.9.7h4.5A16.4 16.4 0 0 0 15.4-.1a15 15 0 0 0-11 4.4A14.7 14.7 0 0 0 0 15.1a14.6 14.6 0 0 0 4.4 10.7 14.6 14.6 0 0 0 11 4.4c4.4 0 7.9-1.2 10.5-3.7a12.6 12.6 0 0 0 3.8-9.2v-1.5l-14.6.1ZM29.8.4 27.2.3 36.9 30l3.1.1L29.8.4Z" />
+         </g>
+         <defs>
+            <clipPath id="da">
+               <path fill="currentColor" d="M0 0h40v30.3H0z" />
+            </clipPath>
+         </defs>
+      </svg>
+      <svg fill="none" viewBox="0 0 22 22" id="icon-tel" xmlns="http://www.w3.org/2000/svg">
          <path
-            d="M0 26.35a7.365 7.365 0 0 0 7.302 7.3h12.317l6.032 6.096a1.079 1.079 0 0 0 1.08.19 1.015 1.015 0 0 0 .57-.888V33.65h5.397A7.365 7.365 0 0 0 40 26.349V7.302A7.365 7.365 0 0 0 32.698 0H7.302A7.365 7.365 0 0 0 0 7.302v19.047ZM10.35 9.523h12.698a.953.953 0 0 1 0 1.905H10.349a.952.952 0 0 1 0-1.905Zm.126 6.349h19.048a.952.952 0 0 1 0 1.905H10.476a.952.952 0 0 1 0-1.905Zm0 6.35h19.048a.952.952 0 0 1 0 1.904H10.476a.952.952 0 0 1 0-1.905Z"
+            d="M10.773.5c5.674 0 10.274 4.6 10.274 10.273 0 5.674-4.6 10.274-10.274 10.274C5.1 21.047.5 16.447.5 10.773.5 5.1 5.1.5 10.773.5Z"
+            stroke="currentColor" />
+         <g clip-path="url(#ea)">
+            <path
+               d="M15.383 13.792a2.552 2.552 0 0 1-.706.735 2.64 2.64 0 0 1-.947.409c-.473.076-1.024.152-2.992-.61a10.294 10.294 0 0 1-4.174-3.585 4.571 4.571 0 0 1-1.023-2.517c-.006-.37.068-.739.217-1.08.15-.341.37-.65.649-.903.253-.18.553-.285.866-.305h.315c.236.076.315.076.472.457l.788 1.755a.373.373 0 0 1 0 .457.986.986 0 0 1-.236.382c-.158.076-.237.228-.394.38a.311.311 0 0 0-.148.212.296.296 0 0 0 .07.246 7.588 7.588 0 0 0 1.338 1.679 7.752 7.752 0 0 0 1.968 1.22.649.649 0 0 0 .63-.153c.265-.237.479-.522.63-.839a.567.567 0 0 1 .63-.152l1.732.762c.237.153.394.153.473.306-.005.386-.058.77-.158 1.144Z"
+               fill="currentColor" />
+         </g>
+         <defs>
+            <clipPath id="ea">
+               <path fill="currentColor" transform="translate(5.541 5.936)" d="M0 0h10v9H0z" />
+            </clipPath>
+         </defs>
+      </svg>
+      <svg fill="none" viewBox="0 0 19 16" id="icon-telegram" xmlns="http://www.w3.org/2000/svg">
+         <path
+            d="m7.554 10.484 6.88 5.352a1.202 1.202 0 0 0 1.588-.344c.114-.163.185-.35.208-.548l2.692-13.381c.3-1.19-.299-1.785-1.197-1.487L.674 6.618c-.897.297-.897 1.19 0 1.487l4.188 1.19 10.172-6.246h.598l-8.077 7.435Z"
             fill="currentColor" />
-      </g>
-      <defs>
-         <clipPath id="ba">
-            <path fill="currentColor" d="M0 0h40v40H0z" />
-         </clipPath>
-      </defs>
+      </svg>
    </svg>
-   <svg fill="none" viewBox="0 0 21 20" id="icon-instagram" xmlns="http://www.w3.org/2000/svg">
-      <rect x=".75" y=".75" width="19.19" height="18.5" rx="4.25" stroke="currentColor" stroke-width="1.5" />
-      <circle cx="10.69" cy="10" r="4.422" stroke="currentColor" stroke-width="1.5" />
-      <circle cx="16.207" cy="4.483" r="1.034" fill="currentColor" />
-   </svg>
-   <svg fill="none" viewBox="0 0 40 31" id="icon-logo" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#da)" fill="currentColor">
-         <path
-            d="M15.1 15.9v2.7h11.6a9.5 9.5 0 0 1-3.4 6.4 12 12 0 0 1-7.9 2.5 11.8 11.8 0 0 1-8.9-3.6A11.8 11.8 0 0 1 3 15.2a11.8 11.8 0 0 1 3.5-8.8 11.8 11.8 0 0 1 8.9-3.6 12.2 12.2 0 0 1 6 1.6l.9.7h4.5A16.4 16.4 0 0 0 15.4-.1a15 15 0 0 0-11 4.4A14.7 14.7 0 0 0 0 15.1a14.6 14.6 0 0 0 4.4 10.7 14.6 14.6 0 0 0 11 4.4c4.4 0 7.9-1.2 10.5-3.7a12.6 12.6 0 0 0 3.8-9.2v-1.5l-14.6.1ZM29.8.4 27.2.3 36.9 30l3.1.1L29.8.4Z" />
-      </g>
-      <defs>
-         <clipPath id="da">
-            <path fill="currentColor" d="M0 0h40v30.3H0z" />
-         </clipPath>
-      </defs>
-   </svg>
-   <svg fill="none" viewBox="0 0 22 22" id="icon-tel" xmlns="http://www.w3.org/2000/svg">
-      <path
-         d="M10.773.5c5.674 0 10.274 4.6 10.274 10.273 0 5.674-4.6 10.274-10.274 10.274C5.1 21.047.5 16.447.5 10.773.5 5.1 5.1.5 10.773.5Z"
-         stroke="currentColor" />
-      <g clip-path="url(#ea)">
-         <path
-            d="M15.383 13.792a2.552 2.552 0 0 1-.706.735 2.64 2.64 0 0 1-.947.409c-.473.076-1.024.152-2.992-.61a10.294 10.294 0 0 1-4.174-3.585 4.571 4.571 0 0 1-1.023-2.517c-.006-.37.068-.739.217-1.08.15-.341.37-.65.649-.903.253-.18.553-.285.866-.305h.315c.236.076.315.076.472.457l.788 1.755a.373.373 0 0 1 0 .457.986.986 0 0 1-.236.382c-.158.076-.237.228-.394.38a.311.311 0 0 0-.148.212.296.296 0 0 0 .07.246 7.588 7.588 0 0 0 1.338 1.679 7.752 7.752 0 0 0 1.968 1.22.649.649 0 0 0 .63-.153c.265-.237.479-.522.63-.839a.567.567 0 0 1 .63-.152l1.732.762c.237.153.394.153.473.306-.005.386-.058.77-.158 1.144Z"
-            fill="currentColor" />
-      </g>
-      <defs>
-         <clipPath id="ea">
-            <path fill="currentColor" transform="translate(5.541 5.936)" d="M0 0h10v9H0z" />
-         </clipPath>
-      </defs>
-   </svg>
-   <svg fill="none" viewBox="0 0 19 16" id="icon-telegram" xmlns="http://www.w3.org/2000/svg">
-      <path
-         d="m7.554 10.484 6.88 5.352a1.202 1.202 0 0 0 1.588-.344c.114-.163.185-.35.208-.548l2.692-13.381c.3-1.19-.299-1.785-1.197-1.487L.674 6.618c-.897.297-.897 1.19 0 1.487l4.188 1.19 10.172-6.246h.598l-8.077 7.435Z"
-         fill="currentColor" />
-   </svg>
-</svg>
    <div class="overlay"></div>
 </body>
 
