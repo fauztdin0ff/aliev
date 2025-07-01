@@ -530,12 +530,16 @@
                               </div>
                            </div>
                            <div class="review__main">
-                              <div class="review__main-image">
-                                 <picture>
-                                    <source srcset="img/cases/3-1.avif" type="image/avif">
-                                    <source srcset="img/cases/3-1.webp" type="image/webp">
-                                    <img src="img/cases/3-1.png" width="658" height="538" alt="Кейс фото">
-                                 </picture>
+                              <div class="review__main-image video-review">
+                                 <img src="img/cases/3-1.png" class="video-review__poster" data-video="files/review.mp4"
+                                    width="658" height="538" alt="Кейс фото">
+                                 <video style="display: none;" controls playsinline preload="none">
+                                    <source src="" type="video/mp4">
+                                    Ваш браузер не поддерживает видео.
+                                 </video>
+                                 <button type="button" class="video-review__play" aria-label="Воспроизвести отзыв">
+                                    <img src="img/icons/play.svg" width="40" height="40" alt="Воспроизвести отзыв">
+                                 </button>
                               </div>
                               <div class="review__main-info">
                                  <div class="review__main-who">Собственница о продаже пентхауса</div>
